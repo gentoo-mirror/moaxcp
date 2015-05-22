@@ -11,6 +11,12 @@ add this config to /etc/portage/repos.conf/moaxcp.conf
     sync-type = git
 
 
-Then sync portage the repo
+Then sync portage with the repo
 
     $ emerge --sync moaxcp
+
+## Packages
+x11-wm/notion_p2014052800
+
+## future packages
+dev-java/recmd5-1.0.1
