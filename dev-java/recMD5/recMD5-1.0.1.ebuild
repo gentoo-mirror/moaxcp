@@ -10,7 +10,7 @@ inherit java-pkg-2 java-pkg-simple
 
 DESCRIPTION="implements a recoverable md5 algorithm."
 HOMEPAGE="https://github.com/moaxcp/recMD5"
-SRC_URI="http://search.maven.org/remotecontent?filepath=com/github/moaxcp/${PN}/${PN}/${PV}/${P}-sources.jar"
+SRC_URI="https://repo1.maven.org/maven2/com/github/moaxcp/${PN}/${PV}/${P}-sources.jar"
 
 LICENSE="MIT"
 SLOT="0"
