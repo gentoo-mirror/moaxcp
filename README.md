@@ -17,6 +17,9 @@ Then sync portage with the repo
 
 ## Packages
 x11-wm/notion_p2014052800
-
-## future packages
 dev-java/recmd5-1.0.1
+
+## Future Packages
+dev-java/commons-httpclient
+project-penny?
+
