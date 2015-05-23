@@ -16,10 +16,10 @@ Then sync portage with the repo
     $ emerge --sync moaxcp
 
 ## Packages
-x11-wm/notion_p2014052800
-dev-java/recmd5-1.0.1
+* x11-wm/notion_p2014052800
+* dev-java/recmd5-1.0.1
 
 ## Future Packages
-dev-java/commons-httpclient
-project-penny?
+* dev-java/commons-httpclient
+* project-penny?
 
