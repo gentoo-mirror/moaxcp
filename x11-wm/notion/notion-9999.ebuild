@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS=""
 IUSE="nls xinerama +xrandr"
 
-RDEPEND="dev-lang/lua-5.1
+RDEPEND=">=dev-lang/lua-5.1
 	x11-libs/libSM
 	x11-libs/libX11
 	x11-libs/libXext
@@ -30,16 +30,16 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	sed -e "/^CFLAGS=/s:=:+=:" \
-		-e "/^CFLAGS/{s:-Os:: ; s:-g::}" \
-		-e "/^LDFLAGS=/{s:=:+=: ; s:-Wl,--as-needed::}" \
-		-e "/^CC=/s:=:?=:" \
-		-e "/^PREFIX/s:=.*$:= \${ROOT}usr:" \
-		-e "/^ETCDIR/s:=.*$:= \${ROOT}etc/notion:" \
-		-e "/^LIBDIR/s:=.*:= \$(PREFIX)/$(get_libdir):" \
-		-e "/^DOCDIR/s:=.*:= \$(PREFIX)/share/doc/${PF}:" \
-		-e "/^LUA_DIR/s:=.*$:= \$(PREFIX)/usr:" \
-		-e "/^VARDIR/s:=.*$:= \${ROOT}var/cache/${PN}:" \
-		-e "s:^\(X11_PREFIX=\).*:\1\$(PREFIX)/usr:" \
+                -e "/^CFLAGS/{s:-Os:: ; s:-g::}" \
+                -e "/^LDFLAGS=/{s:=:+=: ; s:-Wl,--as-needed::}" \
+                -e "/^CC=/s:=:?=:" \
+                -e "s:^\(PREFIX=\).*$:\1${ROOT}usr:" \
+                -e "s:^\(ETCDIR=\).*$:\1${ROOT}etc/notion:" \
+                -e "s:^\(LIBDIR=\).*:\1\$(PREFIX)/$(get_libdir):" \
+                -e "s:^\(DOCDIR=\).*:\1\$(PREFIX)/share/doc/${PF}:" \
+                -e "s:^\(LUA_DIR=\).*$:\1\$(PREFIX)/usr:" \
+                -e "s:^\(VARDIR=\).*$:\1${ROOT}var/cache/${PN}:" \
+                -e "s:^\(X11_PREFIX=\).*:\1\$(PREFIX)/usr:" \
 		-i system-autodetect.mk || die
 	sed -e 's/gcc/$(CC)/g' \
 		-i ioncore/Makefile || die
